@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: utkarsh
+  name: utkarsh
+  namespace: utkarsh
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: utkarsh
+  template:
+    metadata:
+      labels:
+        app: utkarsh
+    spec:
+      containers:
+      - image: ghcr.io/mealie-recipes/mealie:v3.6.0
+        name: utkarsh
+        ports:
+          - containerPort: 9000
